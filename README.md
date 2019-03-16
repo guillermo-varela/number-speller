@@ -22,7 +22,7 @@ Also as a demonstration, the [MDC](https://logback.qos.ch/manual/mdc.html) is us
 ## How to run it in development mode?
 - Clone the repository.
 - Open a terminal/console and go to the project's root folder (or import it into an IDE).
-- Run the **bootRun** Gradle task passing a list of numbers separated by space, for instance `./gradlew bootRun --args "0 13 85 5237 5361232510"` which would produce this outcome: `"0," is not a valid integer or long number, "13," is not a valid integer or long number, "85," is not a valid integer or long number, "5237," is not a valid integer or long number, five billion three hundred sixty-one million two hundred thirty-two thousand five hundred ten`
+- Run the **bootRun** Gradle task passing a list of numbers separated by space, for instance `./gradlew bootRun --args "0 13 85 5237 5361232510"` which would produce this outcome: `[zero, thirteen, eighty-five, five thousand two hundred thirty-seven, five billion three hundred sixty-one million two hundred thirty-two thousand five hundred ten]`
 - If you want to see what happens when entering a text the try `./gradlew bootRun --args "0 test"` and the result would be: `zero, "test" is not a valid integer or long number`
 - Some debug logging will be printed out on the standard output.
 
