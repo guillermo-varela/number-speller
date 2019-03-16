@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: INFO
+    com.sonatype.numberspeller: DEBUG
+  pattern:
+    console: "%highlight([%-5level]) %magenta([%date{ISO8601}] [%X{stamp}] [%class->%method:%line]) | %msg%n"
+
+---
+spring:
+  profiles: prod
+
+logging:
+  level:
+    com.sonatype.numberspeller: INFO
+  pattern:
+    console:
+    file: "%highlight([%-5level]) %magenta([%date{ISO8601}] [%X{stamp}] [%class->%method:%line]) | %msg%n"
+  file: logs/app.log
+  file.max-size: 100MB
