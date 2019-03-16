@@ -30,8 +30,8 @@ Also as a demonstration, the [MDC](https://logback.qos.ch/manual/mdc.html) is us
 - Clone the repository.
 - Open a terminal/console and go to the project's root folder (or import it into an IDE).
 - Build the project using Gradle: `./gradlew build`
-- Run the application setting the production profile and a list of numbers separated by space, for instance `java -Dspring.profiles.active=prod -jar build\libs\number-speller-1.0.0-SNAPSHOT.jar 0 13 85 5237 -50` which would produce this outcome: `zero, thirteen, eighty-five, five thousand two hundred thirty-seven, minus fifty`
-- If you want to see what happens when entering a text the try `java -Dspring.profiles.active=prod -jar build\libs\number-speller-1.0.0-SNAPSHOT.jar 0 test` and the result would be: `zero, "test" is not a valid integer or long number`
+- Run the application setting the production profile and a list of numbers separated by space, for instance `java -Dspring.profiles.active=prod -jar build/libs/number-speller-1.0.0-SNAPSHOT.jar 0 13 85 5237 -50` which would produce this outcome: `zero, thirteen, eighty-five, five thousand two hundred thirty-seven, minus fifty`
+- If you want to see what happens when entering a text the try `java -Dspring.profiles.active=prod -jar build/libs/number-speller-1.0.0-SNAPSHOT.jar 0 test` and the result would be: `zero, "test" is not a valid integer or long number`
 - Some info logging will be written in the file `logs/app.log`.
 
 ## About the code
