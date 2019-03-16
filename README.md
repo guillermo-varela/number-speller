@@ -1,4 +1,6 @@
 # number-speller
+[![Build Status](https://travis-ci.com/guillermo-varela/number-speller.svg?branch=master)](https://travis-ci.com/guillermo-varela/number-speller)
+
 This is a Spring Boot 2 application with a command line interface that allows to enter integer (or long) numbers and then it spells them as words in US english in the same order as the given numbers list.
 
 The application only works with integer (or long) numbers, any other input would be included in the result with the following error message: *"value" is not a valid integer or long number*
@@ -32,3 +34,20 @@ Also as a demonstration, the [MDC](https://logback.qos.ch/manual/mdc.html) is us
 - If you want to see what happens when entering a text the try `java -Dspring.profiles.active=prod -jar build\libs\number-speller-1.0.0-SNAPSHOT.jar 0 test` and the result would be: `zero, "test" is not a valid integer or long number`
 - Some info logging will be written in the file `logs/app.log`.
 
+## About the code
+The entry point is the class [NumberSpellerMain](https://github.com/guillermo-varela/number-speller/blob/master/src/main/java/com/sonatype/numberspeller/main/NumberSpellerMain.java). There the user input is received.
+
+Then it's sent to an implementation of the interface [NumberSpellerService](https://github.com/guillermo-varela/number-speller/blob/master/src/main/java/com/sonatype/numberspeller/service/NumberSpellerService.java) instantiated and assigned by Spring.
+
+The current implementation is [NumberSpellerServiceImpl](https://github.com/guillermo-varela/number-speller/blob/master/src/main/java/com/sonatype/numberspeller/service/impl/NumberSpellerServiceImpl.java) where the input is first validated if it's empty and then tries to spell each item as a number in words using a Java 8 Stream to map each input to it's corresponding spelling or a message error if the element is not an integer o long. This way each result goes in the same order as the input items.
+
+There, the library used to spell the numbers as words is [ICU4J](http://site.icu-project.org/home/why-use-icu4j) which has [a good pace of updates](https://mvnrepository.com/artifact/com.ibm.icu/icu4j) and even works with other languages.
+
+## Unit tests
+Those can be found at: [NumberSpellerServiceImplTest](https://github.com/guillermo-varela/number-speller/blob/master/src/test/java/com/sonatype/numberspeller/service/impl/NumberSpellerServiceImplTest.java)
+
+The results are available on Travis CI: https://travis-ci.com/guillermo-varela/number-speller
+
+If you wanna run the tests locally, just run `./gradlew test` and the results will be available at `build/reports/tests/test/index.html`
+
+![Unit Tests](https://i.imgur.com/bvNt8iU.jpg)
