@@ -48,6 +48,6 @@ Those can be found at: [NumberSpellerServiceImplTest](https://github.com/guiller
 
 The results are available on Travis CI: https://travis-ci.com/guillermo-varela/number-speller
 
-If you wanna run the tests locally, just run `./gradlew test` and the results will be available at `build/reports/tests/test/index.html`
+If you wanna run the tests locally, just run `./gradlew test` and the results will be available at: `build/reports/tests/test/index.html`
 
 ![Unit Tests](https://i.imgur.com/bvNt8iU.jpg)
