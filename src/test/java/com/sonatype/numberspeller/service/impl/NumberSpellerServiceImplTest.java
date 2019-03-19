@@ -52,6 +52,16 @@ public class NumberSpellerServiceImplTest {
     }
 
     @Test
+    public void spellSingleLongNumberInput() {
+        String input = "123456";
+
+        NumberSpellerServiceImpl service = new NumberSpellerServiceImpl();
+        List<String> result = service.spell(input);
+
+        assertEquals(Collections.singletonList("one hundred and twenty-three thousand four hundred and fifty-six"), result);
+    }
+
+    @Test
     public void spellSingleCharacterInput() {
         String input = "test";
 
@@ -72,8 +82,8 @@ public class NumberSpellerServiceImplTest {
                 "zero",
                 "thirteen",
                 "eighty-five",
-                "five thousand two hundred thirty-seven",
-                "five billion three hundred sixty-one million two hundred thirty-two thousand five hundred ten");
+                "five thousand two hundred and thirty-seven",
+                "five billion three hundred and sixty-one million two hundred and thirty-two thousand five hundred and ten");
         assertEquals(expected, result);
     }
 
@@ -86,11 +96,11 @@ public class NumberSpellerServiceImplTest {
 
         List<String> expected = Arrays.asList(
                 "zero",
-                "minus fifty",
+                "negative fifty",
                 "thirteen",
                 "eighty-five",
-                "five thousand two hundred thirty-seven",
-                "minus one");
+                "five thousand two hundred and thirty-seven",
+                "negative one");
         assertEquals(expected, result);
     }
 
@@ -108,9 +118,9 @@ public class NumberSpellerServiceImplTest {
                 "thirteen",
                 "\"test1\"" + INVALID_RESULT,
                 "eighty-five",
-                "five thousand two hundred thirty-seven",
+                "five thousand two hundred and thirty-seven",
                 "\" \"" + INVALID_RESULT,
-                "minus one",
+                "negative one",
                 "\"test 2\"" + INVALID_RESULT);
         assertEquals(expected, result);
     }
