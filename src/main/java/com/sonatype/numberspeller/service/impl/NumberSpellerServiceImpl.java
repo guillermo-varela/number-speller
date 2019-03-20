@@ -34,6 +34,7 @@ public class NumberSpellerServiceImpl implements NumberSpellerService {
                 try {
                     return formatter.format(Long.parseLong(it), "%spellout-numbering-verbose")
                             .replace(",", "")
+                            .replace("-", " ")
                             .replace("minus", "negative");
 
                 } catch (NumberFormatException e) {
