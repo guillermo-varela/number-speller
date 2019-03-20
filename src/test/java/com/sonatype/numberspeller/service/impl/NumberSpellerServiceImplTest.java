@@ -58,7 +58,7 @@ public class NumberSpellerServiceImplTest {
         NumberSpellerServiceImpl service = new NumberSpellerServiceImpl();
         List<String> result = service.spell(input);
 
-        assertEquals(Collections.singletonList("one hundred and twenty-three thousand four hundred and fifty-six"), result);
+        assertEquals(Collections.singletonList("one hundred and twenty three thousand four hundred and fifty six"), result);
     }
 
     @Test
@@ -81,9 +81,9 @@ public class NumberSpellerServiceImplTest {
         List<String> expected = Arrays.asList(
                 "zero",
                 "thirteen",
-                "eighty-five",
-                "five thousand two hundred and thirty-seven",
-                "five billion three hundred and sixty-one million two hundred and thirty-two thousand five hundred and ten");
+                "eighty five",
+                "five thousand two hundred and thirty seven",
+                "five billion three hundred and sixty one million two hundred and thirty two thousand five hundred and ten");
         assertEquals(expected, result);
     }
 
@@ -98,8 +98,8 @@ public class NumberSpellerServiceImplTest {
                 "zero",
                 "negative fifty",
                 "thirteen",
-                "eighty-five",
-                "five thousand two hundred and thirty-seven",
+                "eighty five",
+                "five thousand two hundred and thirty seven",
                 "negative one");
         assertEquals(expected, result);
     }
@@ -117,8 +117,8 @@ public class NumberSpellerServiceImplTest {
                 "\"null\"" + INVALID_RESULT,
                 "thirteen",
                 "\"test1\"" + INVALID_RESULT,
-                "eighty-five",
-                "five thousand two hundred and thirty-seven",
+                "eighty five",
+                "five thousand two hundred and thirty seven",
                 "\" \"" + INVALID_RESULT,
                 "negative one",
                 "\"test 2\"" + INVALID_RESULT);
